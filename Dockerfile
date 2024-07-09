@@ -1,5 +1,5 @@
 # 使用 UnityCI 提供的官方镜像
-FROM ubuntu:lastest
+FROM ubuntu:latest
 
 # 设置工作目录
 WORKDIR /app
