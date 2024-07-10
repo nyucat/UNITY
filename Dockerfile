@@ -1,5 +1,5 @@
 # 使用 UnityCI 提供的官方镜像
-FROM unityci/editor:ubuntu-2020.1.1f1-android-0.3.0
+FROM unityci/editor:ubuntu-2022.3.34f1c1
 
 # 设置工作目录
 WORKDIR /app
