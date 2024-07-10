@@ -5,23 +5,22 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 更新包列表并安装必要的工具
-RUN apt-get update && apt-get install -y \
-    wget \
-    libgtk-3-0 \
-    libx11-xcb1 \
-    libasound2 \
-    libnss3 \
-    libglu1-mesa \
-    libxrandr2 \
-    libxinerama1 \
-    libxcursor1 \
-    libxcomposite1 \
-    libxi6 \
-    libxtst6 \
-    libcurl4 \
-    ca-certificates \
-    xvfb \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget && \
+    apt-get install -y libgtk-3-0 && \
+    apt-get install -y libx11-xcb1 && \
+    apt-get install -y libasound2 && \
+    apt-get install -y libnss3 && \
+    apt-get install -y libglu1-mesa && \
+    apt-get install -y libxrandr2 && \
+    apt-get install -y libxinerama1 && \
+    apt-get install -y libxcursor1 && \
+    apt-get install -y libxcomposite1 && \
+    apt-get install -y libxi6 && \
+    apt-get install -y libxtst6 && \
+    apt-get install -y libcurl4 && \
+    apt-get install -y ca-certificates && \
+    apt-get install -y xvfb && \
+    rm -rf /var/lib/apt/lists/*
 
 # 下载并安装 Unity Hub
 RUN wget -q https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage -O /usr/local/bin/UnityHub.AppImage && \
