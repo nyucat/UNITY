@@ -4,23 +4,56 @@ FROM ubuntu:latest
 # 设置非交互模式
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 更新包列表并安装必要的工具
-RUN apt-get update && apt-get install -y wget && \
-    apt-get install -y libgtk-3-0 && \
-    apt-get install -y libx11-xcb1 && \
-    apt-get install -y libasound2 && \
-    apt-get install -y libnss3 && \
-    apt-get install -y libglu1-mesa && \
-    apt-get install -y libxrandr2 && \
-    apt-get install -y libxinerama1 && \
-    apt-get install -y libxcursor1 && \
-    apt-get install -y libxcomposite1 && \
-    apt-get install -y libxi6 && \
-    apt-get install -y libxtst6 && \
-    apt-get install -y libcurl4 && \
-    apt-get install -y ca-certificates && \
-    apt-get install -y xvfb && \
-    rm -rf /var/lib/apt/lists/*
+# 更新包列表
+RUN apt-get update
+
+# 安装 wget
+RUN apt-get install -y wget
+
+# 安装 libgtk-3-0
+RUN apt-get install -y libgtk-3-0
+
+# 安装 libx11-xcb1
+RUN apt-get install -y libx11-xcb1
+
+# 安装 libasound2
+RUN apt-get install -y libasound2
+
+# 安装 libnss3
+RUN apt-get install -y libnss3
+
+# 安装 libglu1-mesa
+RUN apt-get install -y libglu1-mesa
+
+# 安装 libxrandr2
+RUN apt-get install -y libxrandr2
+
+# 安装 libxinerama1
+RUN apt-get install -y libxinerama1
+
+# 安装 libxcursor1
+RUN apt-get install -y libxcursor1
+
+# 安装 libxcomposite1
+RUN apt-get install -y libxcomposite1
+
+# 安装 libxi6
+RUN apt-get install -y libxi6
+
+# 安装 libxtst6
+RUN apt-get install -y libxtst6
+
+# 安装 libcurl4
+RUN apt-get install -y libcurl4
+
+# 安装 ca-certificates
+RUN apt-get install -y ca-certificates
+
+# 安装 xvfb
+RUN apt-get install -y xvfb
+
+# 清理 apt 缓存
+RUN rm -rf /var/lib/apt/lists/*
 
 # 下载并安装 Unity Hub
 RUN wget -q https://public-cdn.cloud.unity3d.com/hub/prod/UnityHub.AppImage -O /usr/local/bin/UnityHub.AppImage && \
